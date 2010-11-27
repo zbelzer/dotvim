@@ -23,4 +23,10 @@ link_with_check(vimpath, File.expand_path('~/.vimrc'))
 gvimpath = File.expand_path('gvimrc', here)
 link_with_check(gvimpath, File.expand_path('~/.gvimrc'))
 
+puts "Compiling Command-T"
+Dir.chdir("#{here}/bundle/command-t/ruby/command-t") do
+  `ruby extconf.rb`
+  `make`
+end
+
 puts "done."

@@ -21,6 +21,6 @@ vimpath = File.expand_path('vimrc', here)
 link_with_check(vimpath, File.expand_path('~/.vimrc'))
 
 gvimpath = File.expand_path('gvimrc', here)
-link_with_check(vimpath, File.expand_path('~/.gvimrc'))
+link_with_check(gvimpath, File.expand_path('~/.gvimrc'))
 
 puts "done."

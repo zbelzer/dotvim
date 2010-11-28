@@ -1,10 +1,12 @@
 colorscheme vividchalk
 
-if has("mac")
+if has("gui_macvim")
   set guifont=Monaco:h12.00
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> :CommandT<CR>
 else
   set gfn=DejaVu\ Sans\ Mono\ Bold\ 10
-end
+endif
 
 " Quiet terminal bell
 set vb t_vb=

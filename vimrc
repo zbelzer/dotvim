@@ -33,20 +33,25 @@ set statusline+=%P                        " percentage of file
 let html_use_css=1
 let html_number_lines=0
 
-let clj_want_gorilla = 1
-let g:clj_highlight_builtins = 1
-let g:clj_highlight_contrib = 1
-let g:clj_paren_rainbow = 1 
-
-let g:AckAllFiles = 0
-let g:AckCmd = 'ack --type-add ruby=.feature --ignore-dir=tmp'
-let g:gist_clip_command = 'pbcopy'
-let g:gist_detect_filetype = 1
 let g:rubycomplete_buffer_loading = 1
 let g:no_html_toolbar = 'yes'
 
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
+" Gist
+if has("gui_macvim")
+  let g:gist_clip_command = 'pbcopy'
+else
+  let g:gist_clip_command = 'xclip -selection clipboard'
+endif
 
+let g:gist_detect_filetype = 1
+
+" Command-T
+let g:CommandTMatchWindowAtTop=1
+
+" Ack
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType tex setlocal textwidth=78
 autocmd BufNewFile,BufRead *.txt setlocal textwidth=78
 
@@ -79,8 +84,8 @@ noremap <Space> <C-F>
 noremap Q @q
 
 if version >= 700
-    autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
-    autocmd FileType tex setlocal spell spelllang=en_us
+  autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
+  autocmd FileType tex setlocal spell spelllang=en_us
 endif
 
 " Just in case I'm on a mac

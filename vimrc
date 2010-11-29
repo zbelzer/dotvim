@@ -50,7 +50,7 @@ let g:gist_detect_filetype = 1
 let g:CommandTMatchWindowAtTop=1
 
 " Ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:ackprg="ack-grep -H --nocolor --nogroup --column --ignore-dir=tmp"
 
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType tex setlocal textwidth=78

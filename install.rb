@@ -23,6 +23,8 @@ link_with_check(vimpath, File.expand_path('~/.vimrc'))
 gvimpath = File.expand_path('gvimrc', here)
 link_with_check(gvimpath, File.expand_path('~/.gvimrc'))
 
+`git submodule update --init`
+
 puts "Compiling Command-T"
 Dir.chdir("#{here}/bundle/command-t/ruby/command-t") do
   `ruby extconf.rb`

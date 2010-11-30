@@ -52,6 +52,7 @@ let g:CommandTMatchWindowAtTop=1
 " Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column --ignore-dir=tmp"
 
+au BufRead,BufNewFile *.scss set filetype=scss
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType tex setlocal textwidth=78
 autocmd BufNewFile,BufRead *.txt setlocal textwidth=78

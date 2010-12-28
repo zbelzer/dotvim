@@ -8,6 +8,9 @@ else
   set gfn=DejaVu\ Sans\ Mono\ Bold\ 10
 endif
 
+noremap <C-V> "+p
+inoremap <C-V> <ESC>"+p<CR>i
+
 " Quiet terminal bell
 set vb t_vb=
 set noerrorbells

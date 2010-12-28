@@ -50,7 +50,9 @@ let g:gist_detect_filetype = 1
 let g:CommandTMatchWindowAtTop=1
 
 " Ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column --ignore-dir=tmp"
+let g:ackprg="ack-grep -H --nocolor --nogroup --column --ignore-dir=tmp --ignore-dir=stress"
+
+set wildignore+=*.o,*.obj,.git,tmp,stress,db/sphinx
 
 au BufRead,BufNewFile *.scss set filetype=scss
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4

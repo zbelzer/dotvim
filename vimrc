@@ -50,7 +50,7 @@ let g:gist_detect_filetype = 1
 let g:CommandTMatchWindowAtTop=1
 
 " Ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column --ignore-dir=tmp --ignore-dir=stress"
+let g:ackprg="ack-grep -H --nocolor --nogroup --column --nosql --ignore-dir=tmp --ignore-dir=stress"
 
 set wildignore+=*.o,*.obj,.git,tmp,stress,db/sphinx
 
@@ -70,6 +70,7 @@ map <silent> <LocalLeader>cj :!clj %<CR>
 map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg" --extra=+f<CR>
 map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
 map <silent> <LocalLeader>nr :NERDTree<CR>
+map <silent> <LocalLeader>nf :NERDTreeFind<CR>
 map <silent> <LocalLeader>gd :e product_diff.diff<CR>:%!git diff<CR>:setlocal buftype=nowrite<CR>
 map <silent> <LocalLeader>pd :e product_diff.diff<CR>:%!svn diff<CR>:setlocal buftype=nowrite<CR>
 map <silent> <LocalLeader>nh :nohls<CR>

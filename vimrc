@@ -80,6 +80,14 @@ map <silent> <LocalLeader>cc :TComment<CR>
 map <silent> <LocalLeader>uc :TComment<CR>
 cnoremap <Tab> <C-L><C-D>
 
+nmap <LocalLeader>a= :Tab /=<CR>
+vmap <LocalLeader>a= :Tab /=<CR>
+nmap <LocalLeader>a: :Tab /:\zs<CR>
+vmap <LocalLeader>a: :Tab /:\zs<CR>
+nmap <LocalLeader>a> :Tab /=><CR>
+vmap <LocalLeader>a> :Tab /=><CR>
+
+
 " ctrl-space for suggestions
 inoremap <C-Space> <C-N>
 

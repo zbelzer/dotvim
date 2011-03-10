@@ -58,3 +58,9 @@
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = https://github.com/tsaleh/vim-matchit.git
+[submodule "bundle/erlang"]
+	path = bundle/erlang
+	url = https://github.com/oscarh/vimerl.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular.git

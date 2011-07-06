@@ -82,11 +82,14 @@ cnoremap <Tab> <C-L><C-D>
 
 nmap <LocalLeader>a= :Tab /=<CR>
 vmap <LocalLeader>a= :Tab /=<CR>
+nmap <LocalLeader>a, :Tab /,<CR>
+vmap <LocalLeader>a, :Tab /,<CR>
 nmap <LocalLeader>a: :Tab /:\zs<CR>
 vmap <LocalLeader>a: :Tab /:\zs<CR>
 nmap <LocalLeader>a> :Tab /=><CR>
 vmap <LocalLeader>a> :Tab /=><CR>
 
+map <silent> <LocalLeader>h :Hammer<CR>
 
 " ctrl-space for suggestions
 inoremap <C-Space> <C-N>

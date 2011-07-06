@@ -70,3 +70,9 @@
 [submodule "bundle/endwise"]
 	path = bundle/endwise
 	url = git://github.com/tpope/vim-endwise.git
+[submodule "bundle/markdown-preview"]
+	path = bundle/markdown-preview
+	url = git://github.com/groenewege/vim-markdown-preview.git
+[submodule "bundle/hammer"]
+	path = bundle/hammer
+	url = https://github.com/robgleeson/hammer.vim.git

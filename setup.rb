@@ -19,13 +19,14 @@ git_bundles = [
   "git://github.com/godlygeek/tabular.git",
   "git://github.com/scrooloose/syntastic.git",
   "git://github.com/tpope/vim-markdown.git",
-  "git://github.com/tpope/vim-endwise.git"
+  "git://github.com/tpope/vim-endwise.git",
+  "https://github.com/robgleeson/hammer.vim.git"
   # "git://github.com/tsaleh/vim-align.git",
 ]
 
 vim_org_scripts = [
   ["IndexedSearch", "7062",  "plugin"],
-  ["gist",          "12732", "plugin"],
+  # ["gist",          "12732", "plugin"],
   ["jquery",        "12107", "syntax"],
 ]
 

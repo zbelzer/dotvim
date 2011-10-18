@@ -20,7 +20,8 @@ git_bundles = [
   "git://github.com/scrooloose/syntastic.git",
   "git://github.com/tpope/vim-markdown.git",
   "git://github.com/tpope/vim-endwise.git",
-  "https://github.com/robgleeson/hammer.vim.git"
+  "https://github.com/robgleeson/hammer.vim.git",
+  "https://github.com/vim-scripts/JavaScript-Indent.git"
   # "git://github.com/tsaleh/vim-align.git",
 ]
 

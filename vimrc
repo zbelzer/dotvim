@@ -47,12 +47,17 @@ let g:gist_open_browser_after_post = 1
 let g:gist_detect_filetype = 1
 
 " Command-T
+nmap <silent> <leader>t :CommandTFlush<CR>:CommandT<CR>
 let g:CommandTMatchWindowAtTop=1
 
 " Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column --nosql --ignore-dir=tmp --ignore-dir=stress"
 
-set wildignore+=*.o,*.obj,.git,tmp,stress,db/sphinx
+set wildignore+=*.o,*.obj,.git,tmp,stress,db/sphinx,vendor/cache,doc,spec/fixtures
+
+noremap <F3> :source $MYVIMRC<CR>
+noremap <F2> :sp $MYVIMRC<CR>
+autocmd! bufwritepost .vimrc source %
 
 au BufRead,BufNewFile *.scss set filetype=scss
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4

@@ -1,4 +1,4 @@
-colorscheme vividchalk
+colorscheme molokai
 
 if has("gui_macvim")
   set guifont=Monaco:h12.00

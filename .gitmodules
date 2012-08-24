@@ -82,3 +82,6 @@
 [submodule "bundle/JavaScript-Indent"]
 	path = bundle/JavaScript-Indent
 	url = https://github.com/vim-scripts/JavaScript-Indent.git
+[submodule "bundle/xml.vim"]
+	path = bundle/xml.vim
+	url = https://github.com/othree/xml.vim.git

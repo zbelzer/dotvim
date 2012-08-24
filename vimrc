@@ -19,6 +19,8 @@ set dir=/tmp
 set nowrap
 set scrolloff=5
 
+set spell
+
 set laststatus=2
 set statusline=
 set statusline+=%<\                       " cut at start
@@ -51,9 +53,12 @@ nmap <silent> <leader>t :CommandTFlush<CR>:CommandT<CR>
 let g:CommandTMatchWindowAtTop=1
 
 " Ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column --nosql --ignore-dir=tmp --ignore-dir=stress"
+let g:ackprg="ack -H --nocolor --nogroup --column --nosql --ignore-dir=tmp --ignore-dir=stress --ignore-dir=doc"
 
 set wildignore+=*.o,*.obj,.git,tmp,stress,db/sphinx,vendor/cache,doc,spec/fixtures
+let g:HammerQuiet=1
+
+colorscheme molokai
 
 noremap <F3> :source $MYVIMRC<CR>
 noremap <F2> :sp $MYVIMRC<CR>
@@ -63,6 +68,7 @@ au BufRead,BufNewFile *.scss set filetype=scss
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType tex setlocal textwidth=78
 autocmd BufNewFile,BufRead *.txt setlocal textwidth=78
+autocmd BufLeave <buffer> silent! ruby $command_t.leave
 
 " Restore cursor position
 autocmd BufReadPost *

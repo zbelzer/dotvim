@@ -51,7 +51,8 @@ git_bundles = [
   "https://github.com/tpope/vim-surround.git",
   "https://github.com/tpope/vim-vividchalk.git",
   "https://github.com/vim-scripts/IndexedSearch.git",
-  "https://github.com/vim-scripts/JavaScript-Indent.git"
+  "https://github.com/vim-scripts/JavaScript-Indent.git",
+  "https://github.com/vim-scripts/tComment"
 ]
 
 bundles_dir = File.expand_path('../bundle', __FILE__)

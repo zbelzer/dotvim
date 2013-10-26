@@ -1,57 +1,67 @@
 #!/usr/bin/env ruby
 
-# Slightly modified version of: http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen Thanks!
-
-git_bundles = [ 
-  "git://github.com/astashov/vim-ruby-debugger.git",
-  "git://github.com/msanders/snipmate.vim.git",
-  "git://github.com/scrooloose/nerdtree.git",
-  "git://github.com/timcharper/textile.vim.git",
-  "git://github.com/tpope/vim-cucumber.git",
-  "git://github.com/tpope/vim-fugitive.git",
-  "git://github.com/tpope/vim-git.git",
-  "git://github.com/tpope/vim-haml.git",
-  "git://github.com/tpope/vim-markdown.git",
-  "git://github.com/tpope/vim-rails.git",
-  "git://github.com/tpope/vim-repeat.git",
-  "git://github.com/tpope/vim-surround.git",
-  "git://github.com/tpope/vim-vividchalk.git",
-  "git://github.com/godlygeek/tabular.git",
-  "git://github.com/scrooloose/syntastic.git",
-  "git://github.com/tpope/vim-markdown.git",
-  "git://github.com/tpope/vim-endwise.git",
-  "https://github.com/robgleeson/hammer.vim.git",
-  "https://github.com/vim-scripts/JavaScript-Indent.git",
-  "https://github.com/othree/xml.vim.git"
-  # "git://github.com/tsaleh/vim-align.git",
-]
-
-vim_org_scripts = [
-  ["IndexedSearch", "7062",  "plugin"],
-  # ["gist",          "12732", "plugin"],
-  ["jquery",        "12107", "syntax"],
-]
-
 require 'fileutils'
-require 'open-uri'
 
-bundles_dir = File.join(File.dirname(__FILE__), "bundle")
+puts "Setting up vim..."
 
-git_bundles.each do |url|
-  dir = File.join(bundles_dir, url.split('/').last.sub(/\.git$/, '').sub('vim-', ''))
-  puts "  Unpacking #{url} into #{dir}"
-  `git submodule add #{url} #{dir}`
+def link_with_check(old, new)
+  `diff #{old} #{new}`
+
+  if $?.exitstatus == 0
+    puts "Already linked #{old} to #{new}"
+  else
+    FileUtils.ln_s(old, new)
+  end
+rescue
+  print "#{new} exists. Replace? (y/N) "
+  if $stdin.gets.chomp.downcase == "y"
+    puts "Replacing #{new}"
+    FileUtils.ln_sf(old, new)
+  else
+    puts "Skipping #{new}"
+  end
 end
 
-`git submodule update --init`
+here = File.dirname(__FILE__)
+vimpath = File.expand_path('vimrc', here)
+link_with_check(vimpath, File.expand_path('~/.vimrc'))
 
-FileUtils.cd(bundles_dir)
+gvimpath = File.expand_path('gvimrc', here)
+link_with_check(gvimpath, File.expand_path('~/.gvimrc'))
 
-vim_org_scripts.each do |name, script_id, script_type|
-  puts "  Downloading #{name}"
-  local_file = File.join(name, script_type, "#{name}.vim")
-  FileUtils.mkdir_p(File.dirname(local_file))
-  File.open(local_file, "w") do |file|
-    file << open("http://www.vim.org/scripts/download_script.php?src_id=#{script_id}").read
+git_bundles = [ 
+  "https://github.com/godlygeek/tabular.git",
+  "https://github.com/kien/ctrlp.vim.git",
+  "https://github.com/msanders/snipmate.vim.git",
+  "https://github.com/othree/xml.vim.git",
+  "https://github.com/scrooloose/nerdtree.git",
+  "https://github.com/scrooloose/syntastic.git",
+  "https://github.com/timcharper/textile.vim.git",
+  "https://github.com/tomasr/molokai.git",
+  "https://github.com/tpope/vim-cucumber.git",
+  "https://github.com/tpope/vim-endwise.git",
+  "https://github.com/tpope/vim-fugitive.git",
+  "https://github.com/tpope/vim-git.git",
+  "https://github.com/tpope/vim-haml.git",
+  "https://github.com/tpope/vim-markdown.git",
+  "https://github.com/tpope/vim-rails.git",
+  "https://github.com/tpope/vim-repeat.git",
+  "https://github.com/tpope/vim-surround.git",
+  "https://github.com/tpope/vim-vividchalk.git",
+  "https://github.com/vim-scripts/IndexedSearch.git",
+  "https://github.com/vim-scripts/JavaScript-Indent.git"
+]
+
+bundles_dir = File.expand_path('../bundle', __FILE__)
+
+git_bundles.each do |url|
+  bundle_name = url.split('/').last.sub(/\.git$/, '')
+  clone_dir = File.join(bundles_dir, bundle_name)
+
+  if File.directory?(clone_dir)
+    puts "Already cloned #{bundle_name}"
+  else
+    puts "  Cloning #{url} into #{clone_dir}"
+    `git clone #{url} #{clone_dir}`
   end
 end

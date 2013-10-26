@@ -7,14 +7,13 @@ filetype plugin indent on
 compiler ruby
 
 set hlsearch
-set number
+" set number
 set showmatch
 set incsearch
 set background=dark
 set hidden
 set backspace=indent,eol,start
 set textwidth=0 nosmartindent tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-set ruler
 set dir=/tmp
 set nowrap
 set scrolloff=5
@@ -53,9 +52,12 @@ nmap <silent> <leader>t :CommandTFlush<CR>:CommandT<CR>
 let g:CommandTMatchWindowAtTop=1
 
 " Ack
-let g:ackprg="ack -H --nocolor --nogroup --column --nosql --ignore-dir=tmp --ignore-dir=stress --ignore-dir=doc"
+let g:ackprg="ack -H --nocolor --nogroup --column --nosql --ignore-dir=tmp --ignore-dir=stress --ignore-dir=doc --ignore-dir=coverage"
 
-set wildignore+=*.o,*.obj,.git,tmp,stress,db/sphinx,vendor/cache,doc,spec/fixtures
+" Ag
+let g:agprg="<custom-ag-path-goes-here> --column"
+
+set wildignore+=*.o,*.obj,.git,tmp,stress,db/sphinx,vendor/cache,doc,spec/fixtures,coverage
 let g:HammerQuiet=1
 
 colorscheme molokai

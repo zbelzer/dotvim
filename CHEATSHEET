@@ -1,0 +1,30 @@
+Ag:
+
+* aw   to search for current word under cursor
+* o    to open (same as enter)
+* go   to preview file (open but maintain focus on ag.vim results)
+* t    to open in new tab
+* T    to open in new tab silently
+* h    to open in horizontal split
+* H    to open in horizontal split silently
+* v    to open in vertical split
+* gv   to open in vertical split silently
+* q    to close the quickfix window
+
+ctrlp:
+
+## Basic Usage
+* `:CtrlP` or `:CtrlP [starting-directory]` to invoke CtrlP in find file mode.
+* `:CtrlPBuffer` or `:CtrlPMRU` to invoke CtrlP in find buffer or find MRU file mode.
+* `:CtrlPMixed` to search in Files, Buffers and MRU files at the same time.
+
+## Once CtrlP is open:
+* `<F5>` to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
+* `<c-f>` and `<c-b>` to cycle between modes.
+* `<c-d>` to switch to filename only search instead of full path.
+* `<c-r>` to switch to regexp mode.
+* `<c-j>`, `<c-k>` or the arrow keys to navigate the result list.
+* `<c-t>` or `<c-v>`, `<c-x>` to open the selected entry in a new tab or in a new split.
+* `<c-n>`, `<c-p>` to select the next/previous string in the prompt's history.
+* `<c-y>` to create a new file and its parent directories.
+* `<c-z>` to mark/unmark multiple files and `<c-o>` to open them.

@@ -48,14 +48,17 @@ let g:gist_open_browser_after_post = 1
 let g:gist_detect_filetype = 1
 
 " Command-T
-nmap <silent> <leader>t :CommandTFlush<CR>:CommandT<CR>
-let g:CommandTMatchWindowAtTop=1
+" nmap <silent> <leader>t :CommandTFlush<CR>:CommandT<CR>
+" let g:CommandTMatchWindowAtTop=1
+
+" Ctrl-P
+nmap <silent> <leader>t :CtrlP<CR>
 
 " Ack
-let g:ackprg="ack -H --nocolor --nogroup --column --nosql --ignore-dir=tmp --ignore-dir=stress --ignore-dir=doc --ignore-dir=coverage"
+" let g:ackprg="ack -H --nocolor --nogroup --column --nosql --ignore-dir=tmp --ignore-dir=stress --ignore-dir=doc --ignore-dir=coverage"
 
 " Ag
-let g:agprg="<custom-ag-path-goes-here> --column"
+" let g:agprg="<custom-ag-path-goes-here> --column"
 
 set wildignore+=*.o,*.obj,.git,tmp,stress,db/sphinx,vendor/cache,doc,spec/fixtures,coverage
 let g:HammerQuiet=1
@@ -87,7 +90,7 @@ map <silent> <LocalLeader>nf :NERDTreeFind<CR>
 map <silent> <LocalLeader>gd :e product_diff.diff<CR>:%!git diff<CR>:setlocal buftype=nowrite<CR>
 map <silent> <LocalLeader>pd :e product_diff.diff<CR>:%!svn diff<CR>:setlocal buftype=nowrite<CR>
 map <silent> <LocalLeader>nh :nohls<CR>
-map <LocalLeader>aw :Ack <C-R><C-W> 
+map <LocalLeader>aw :Ag <C-R><C-W> 
 map <silent> <LocalLeader>bd :bufdo :bd<CR>
 map <silent> <LocalLeader>cc :TComment<CR>
 map <silent> <LocalLeader>uc :TComment<CR>

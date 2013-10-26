@@ -34,6 +34,7 @@ git_bundles = [
   "https://github.com/kien/ctrlp.vim.git",
   "https://github.com/msanders/snipmate.vim.git",
   "https://github.com/othree/xml.vim.git",
+  "https://github.com/rking/ag.vim.git",
   "https://github.com/scrooloose/nerdtree.git",
   "https://github.com/scrooloose/syntastic.git",
   "https://github.com/timcharper/textile.vim.git",
@@ -59,9 +60,15 @@ git_bundles.each do |url|
   clone_dir = File.join(bundles_dir, bundle_name)
 
   if File.directory?(clone_dir)
+    puts
     puts "Already cloned #{bundle_name}"
   else
+    puts
     puts "  Cloning #{url} into #{clone_dir}"
     `git clone #{url} #{clone_dir}`
+
+    FileUtils.cd(clone_dir) do
+      FileUtils.rm_rf(".git")
+    end
   end
 end

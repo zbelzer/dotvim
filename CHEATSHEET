@@ -28,3 +28,9 @@ ctrlp:
 * `<c-n>`, `<c-p>` to select the next/previous string in the prompt's history.
 * `<c-y>` to create a new file and its parent directories.
 * `<c-z>` to mark/unmark multiple files and `<c-o>` to open them.
+
+BufExplorer
+
+* '\be' (normal open)
+* '\bs' (force horizontal split open)
+* '\bv' (force vertical split open) 

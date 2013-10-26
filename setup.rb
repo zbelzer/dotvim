@@ -30,6 +30,7 @@ gvimpath = File.expand_path('gvimrc', here)
 link_with_check(gvimpath, File.expand_path('~/.gvimrc'))
 
 git_bundles = [ 
+  "https://github.com/corntrace/bufexplorer.git",
   "https://github.com/godlygeek/tabular.git",
   "https://github.com/kien/ctrlp.vim.git",
   "https://github.com/msanders/snipmate.vim.git",

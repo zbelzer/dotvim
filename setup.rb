@@ -40,7 +40,6 @@ git_bundles = [
   "https://github.com/scrooloose/syntastic.git",
   "https://github.com/timcharper/textile.vim.git",
   "https://github.com/tomasr/molokai.git",
-  "https://github.com/tpope/vim-cucumber.git",
   "https://github.com/tpope/vim-endwise.git",
   "https://github.com/tpope/vim-fugitive.git",
   "https://github.com/tpope/vim-git.git",

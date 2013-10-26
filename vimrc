@@ -37,6 +37,9 @@ let html_number_lines=0
 let g:rubycomplete_buffer_loading = 1
 let g:no_html_toolbar = 'yes'
 
+" RSpec
+let g:rspec_command = "!rspec --no-profile --no-color -f p {spec}"
+
 " Gist
 if has("gui_macvim")
   let g:gist_clip_command = 'pbcopy'
@@ -59,6 +62,12 @@ nmap <silent> <leader>t :CtrlP<CR>
 
 " Ag
 " let g:agprg="<custom-ag-path-goes-here> --column"
+
+" Rspec
+map <Leader>r :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 set wildignore+=*.o,*.obj,.git,tmp,stress,db/sphinx,vendor/cache,doc,spec/fixtures,coverage
 let g:HammerQuiet=1

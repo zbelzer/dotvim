@@ -31,6 +31,7 @@ link_with_check(gvimpath, File.expand_path('~/.gvimrc'))
 
 git_bundles = [ 
   "https://github.com/corntrace/bufexplorer.git",
+  "https://github.com/edsono/vim-matchit",
   "https://github.com/godlygeek/tabular.git",
   "https://github.com/kien/ctrlp.vim.git",
   "https://github.com/msanders/snipmate.vim.git",
@@ -52,7 +53,8 @@ git_bundles = [
   "https://github.com/tpope/vim-vividchalk.git",
   "https://github.com/vim-scripts/IndexedSearch.git",
   "https://github.com/vim-scripts/JavaScript-Indent.git",
-  "https://github.com/vim-scripts/tComment"
+  "https://github.com/vim-scripts/tComment",
+  "https://github.com/vim-scripts/ruby-matchit"
 ]
 
 bundles_dir = File.expand_path('../bundle', __FILE__)

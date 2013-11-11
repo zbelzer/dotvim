@@ -57,6 +57,10 @@ let g:gist_detect_filetype = 1
 " Ctrl-P
 nmap <silent> <leader>t :CtrlP<CR>
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtHistory(-1)':       [],
+  \ 'PrtHistory(1)':        [],
+\ }
 
 " Ack
 " let g:ackprg="ack -H --nocolor --nogroup --column --nosql --ignore-dir=tmp --ignore-dir=stress --ignore-dir=doc --ignore-dir=coverage"
